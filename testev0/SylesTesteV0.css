@@ -1,0 +1,208 @@
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+
+/* Custom styles */
+.dark {
+    @apply bg-gray-900 text-gray-100;
+}
+
+.dark .bg-white {
+    @apply bg-gray-800;
+}
+
+.dark .text-gray-700 {
+    @apply text-gray-300;
+}
+
+.dark .border-gray-200 {
+    @apply border-gray-700;
+}
+
+.dark .hover\:bg-gray-100:hover {
+    @apply hover:bg-gray-700;
+}
+
+.dark .bg-gray-100 {
+    @apply bg-gray-800;
+}
+
+/* Left Panel */
+#leftPanel {
+    @apply fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 ease-in-out z-20;
+}
+
+#leftPanel.closed {
+    @apply -translate-x-full;
+}
+
+#leftPanel .header {
+    @apply flex justify-between items-center p-4 border-b border-gray-200 bg-red-600 text-white;
+}
+
+#leftPanel .content {
+    padding: 1rem;
+}
+
+#leftPanel .content h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+#clientList {
+    padding: 0 0.5rem;
+}
+
+#leftPanel .content button {
+    width: 100%;
+    text-align: left;
+    padding: 0.25rem 0;
+    border-radius: 0.375rem;
+    color: #374151;
+    transition: background-color 0.2s;
+}
+
+#clientList > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#clientList span {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Main Content */
+#mainContent {
+    @apply flex-1 flex flex-col;
+}
+
+#mainContent.panel-open {
+    @apply ml-64;
+}
+
+/* Header */
+header {
+    @apply flex justify-between items-center p-4 bg-red-600 text-white;
+}
+
+/* Main Content Area */
+#mainContentArea {
+    @apply flex-1 p-6 overflow-auto bg-gray-100;
+}
+
+/* Client Card */
+.client-card {
+    @apply max-w-4xl mx-auto bg-white rounded-lg shadow-md;
+}
+
+.client-card .header {
+    @apply bg-red-600 text-white p-2 min-h-[40px] rounded-t-lg;
+}
+
+.client-card .content {
+    @apply p-4;
+}
+
+/* Accordion */
+.accordion-item {
+    @apply border-b border-gray-200 py-2;
+}
+
+.accordion-trigger {
+    @apply w-full text-left font-semibold py-2 px-4 hover:bg-gray-100 rounded-md flex items-center justify-between;
+}
+
+.accordion-content {
+    @apply px-4 py-2;
+}
+
+/* Table */
+table {
+    @apply w-full;
+}
+
+th, td {
+    @apply p-2 border-b border-gray-200;
+}
+
+/* Inputs and Selects */
+input, select {
+    @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
+}
+
+/* Buttons */
+button {
+    @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+}
+
+/* Badges */
+.badge {
+    @apply bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center;
+}
+
+/* Status Colors */
+.text-red-500 {
+    @apply text-red-500;
+}
+
+.text-yellow-500 {
+    @apply text-yellow-500;
+}
+
+.text-green-500 {
+    @apply text-green-500;
+}
+
+/* Utility Classes */
+.hidden {
+    @apply hidden;
+}
+
+.cursor-pointer {
+    @apply cursor-pointer;
+}
+
+.space-y-4 > * + * {
+    @apply mt-4;
+}
+
+.space-x-4 > * + * {
+    @apply ml-4;
+}
+
+/* Dark mode overrides */
+.dark {
+    background-color: #121212; /* Fundo preto */
+    color: #ffffff; /* Texto branco */
+}
+
+/* Aplica o fundo preto e texto branco para as áreas principais no modo escuro */
+.dark #mainContentArea,
+.dark #leftPanel,
+.dark .client-card,
+.dark .accordion-trigger,
+.dark .ticket-details,
+.dark .accordion-content {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Mantém as letras brancas em elementos específicos */
+.dark #clientList span,
+.dark #leftPanel .content h3,
+.dark #leftPanel .content button,
+.dark .accordion-trigger {
+    color: #ffffff;
+}
+
+/* Mantém o cabeçalho vermelho */
+.dark header,
+.dark #leftPanel .header,
+.dark .client-card .header {
+    background-color: #dc2626;
+    color: #ffffff;
+}

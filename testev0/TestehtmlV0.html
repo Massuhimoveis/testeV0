@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Management</title>
+    <!-- Importa o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="SylesTesteV0.css">
+</head>
+<body>
+    <div id="app" class="flex h-screen">
+        <!-- Painel Esquerdo -->
+        <div id="leftPanel" class="fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200 transform -translate-x-full transition-all duration-200 ease-in-out z-20">
+            <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-red-600 text-white">
+                <h2 class="text-lg font-semibold">Lista de Clientes</h2>
+                <!-- Botão para fechar o painel esquerdo -->
+                <button id="closeLeftPanel" class="text-white hover:text-gray-200">X</button>
+            </div>
+            <div class="p-4">
+                <!-- Campo de entrada para filtros -->
+                <input type="text" placeholder="Filtros" class="w-full mb-4">
+                <div id="clientList" class="space-y-2">
+                    <!-- A lista de clientes será populada aqui -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div id="mainContent" class="flex-1 flex flex-col">
+            <!-- Cabeçalho -->
+            <header class="flex justify-between items-center p-4 bg-red-600 text-white">
+                <div class="flex items-center space-x-4">
+                    <!-- Botão para alternar o painel esquerdo -->
+                    <button id="toggleLeftPanel" class="text-white hover:text-gray-200">☰</button>
+                    <h1 class="text-xl font-bold">Massuh Imóveis</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Filtros de categoria e ticket -->
+                    <select id="categoryFilter" class="bg-white text-black h-7 w-[120px] text-sm mr-2">
+                        <option value="ALL">Todas</option>
+                        <option value="TAREFA">TAREFA</option>
+                        <option value="COMPRA">COMPRA</option>
+                        <option value="IMÓVEL">IMÓVEL</option>
+                    </select>
+                    <select id="ticketFilter" class="bg-white text-black h-7 w-[90px] text-sm">
+                        <option value="active">Ativos</option>
+                        <option value="discarded">Descartados</option>
+                    </select>
+                    <!-- Botão para alternar o modo escuro -->
+                    <button id="toggleDarkMode" class="text-white hover:text-gray-200">☀️</button>
+                    <button class="text-white hover:text-gray-200">➡️</button>
+                </div>
+            </header>
+
+            <!-- Área de Conteúdo Principal -->
+            <main id="mainContentArea" class="flex-1 p-6 overflow-auto bg-gray-100">
+                <!-- O conteúdo será inserido dinamicamente aqui -->
+            </main>
+        </div>
+    </div>
+    <!-- Importa o arquivo JavaScript -->
+    <script src="TesteJV0.js"></script>
+</body>
+</html>
